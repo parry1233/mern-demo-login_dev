@@ -3,7 +3,7 @@ import { createApp } from "https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.
 createApp({
   data() {
     return {
-      apiUrl: `https://5000-maroon-koala-8klosyxm.ws-us11.gitpod.io`,
+      apiUrl: `http://127.0.0.1:5000`,
       user: {
         id: "",
         password: "",

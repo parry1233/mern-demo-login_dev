@@ -1,5 +1,5 @@
 import { createApp } from "https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.esm-browser.js";
-const apiUrl = "https://5000-maroon-koala-8klosyxm.ws-us11.gitpod.io";
+const apiUrl = "http://127.0.0.1:5000";
 
 let productModal = null;
 let delProductModal = null;
@@ -137,6 +137,18 @@ createApp({
     createImages() {
       this.tempProduct.imagesUrl = [];
       this.tempProduct.imagesUrl.push("");
+    },
+    logout() {
+      console.log(document)
+      const token = document.cookie.replace(
+        /(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/,
+        "$1"
+      );
+      if (token === "") {
+        console.log(document)
+        alert("請重新登入");
+        window.location = "../LoginRegister";
+      }
     },
   },
 }).mount("#app");
